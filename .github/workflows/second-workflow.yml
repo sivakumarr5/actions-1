@@ -23,3 +23,6 @@ jobs:
 
             - name: list repo files
               run: ls -ltra
+
+            - name: print date
+              run: date
