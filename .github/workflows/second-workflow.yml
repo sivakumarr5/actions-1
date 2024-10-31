@@ -10,16 +10,16 @@ jobs:
               uses: actions/checkout@v4
             
             - name: install cowsay
-              run: apt install cowsay
+              run: sudo apt-get install cowsay -y
 
             - name: execute cowsay cmd
-              run: cowsay "text" > dragon.txt
+              run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" > dragon.txt
 
             - name: dragon file exists
-              run: ls dragon.txt
+              run: grep -i "dragon" dragon.txt
             
             - name: read dragon.txt file
               run: cat dragon.txt
 
-            - name: read files
+            - name: list repo files
               run: ls -ltra
